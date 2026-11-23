@@ -1,6 +1,5 @@
 import random
 import json
-import linecache
 
 
 detail = {}
@@ -120,11 +119,28 @@ class BankAccount:
         detail.clear()
         # print(detail)
     
-
-
-# print("new account creation ")
-# acc = BankAccount()
-# # acc.new_acc()
-# # acc.display()
-# acc.deposit()
-# acc.show_balance()
+x = True
+acc = BankAccount()
+while x == True:
+    print("1=>New account\n2=>deposit\n3=>withdraw\n4=>display account details")
+    inp = int(input("Ente what you want to perform (insert the number in front of it): "))
+    if inp == 1:
+        acc.new_acc()
+        
+    elif inp == 2 :
+        acc.deposit()
+        acc.show_balance()
+    elif inp == 3:
+        acc.withdraw()
+        acc.show_balance()
+    elif inp == 4:
+         acc.display()
+    else:
+         print("Invalid input")
+    ext = int(input("Do you want to exit?\n1=>yes\n2=>no"))
+    if ext == 1:
+         break
+    elif ext == 2:
+         pass
+    else:
+         print("Invalid input")
